@@ -1,0 +1,12 @@
+package com.deividasstr.domain.repositories
+
+import com.deividasstr.domain.entities.models.Fact
+import io.reactivex.Completable
+import io.reactivex.Single
+@EntryPoint
+interface FactRepo {
+
+    fun getRandomFact(currentFactId: Long): Single<Fact>
+
+    fun downloadAllFactsAndSave(): Completable
+}
